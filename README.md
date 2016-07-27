@@ -32,4 +32,18 @@ ld main.o -framework CoreFoundation -lSystem -L ../libaba_static/  -laba_static 
 buzz
 buzz
 bab
+
+otool -L ./main/main
+./main/main:
+  /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation (compatibility version 150.0.0, current version 1258.1.0)
+  /usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1226.10.1)
+
+nm ./main/main
+                 U _CFShow
+                 U ___CFConstantStringClassReference
+0000000000001000 A __mh_execute_header
+0000000000001f40 T _aba
+0000000000001f70 T _fizz
+0000000000001f10 T _main
+                 U dyld_stub_binder
 ```
