@@ -1,8 +1,8 @@
 ## Trying to understand how linking works
 
-libfoo_static is a static library that depends on CoreFoundation.
-libaba_static is a static library that depends on CoreFoundation and libfoo_static.
-main should be an executable that statically links both libfoo_static and libfoo_static.
+* libfoo_static is a static library that depends on CoreFoundation.
+* libaba_static is a static library that depends on CoreFoundation and libfoo_static.
+* main should be an executable that statically links both libfoo_static and libfoo_static.
 
 ### Building libfoo_static
 
