@@ -8,7 +8,14 @@
 
 ```bash
 clang -c bar.c -o bar.o # create object file
-libtool -static bar.o -o libfoo_static.a # create static library
+libtool -static bar.o -o libfoo_static.a # create static Library
+
+nm libfoo_static.a
+
+libfoo_static.a(bar.o):
+                 U _CFShow
+                 U ___CFConstantStringClassReference
+0000000000000000 T _fizz
 ```
 
 ### Building libaba_static
@@ -16,6 +23,14 @@ libtool -static bar.o -o libfoo_static.a # create static library
 ```bash
 clang -c aba.c -o aba.o -I ../libfoo_static/ # create object file
 libtool -static aba.o -o libaba_static.a # create static library
+
+nm libaba_static.a
+
+libaba_static.a(aba.o):
+                 U _CFShow
+                 U ___CFConstantStringClassReference
+0000000000000000 T _aba
+                 U _fizz
 ```
 
 ### Building main
